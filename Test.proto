@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+message TestMessageIn {
+    int32 uid = 1;
+    string testName = 2;
+};
+
+message TestMessageOut {
+    int32 uid = 1;
+    string testResult = 2;
+};
+
+service TestMessageHandler {
+    rpc getTestResult (TestMessageIn) returns (TestMessageOut);
+};
